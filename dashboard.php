@@ -16,9 +16,10 @@ if(!isset($_SESSION['Name'])){
 
 <p><?php echo $_SESSION['Age'] ?></p>
 
+
 <p><?php echo $_SESSION['Email'] ?></p>
 
 
 <p><?php echo $_SESSION['Roll_No'] ?></p>
 
-<a href="logout.php"> logout </a>
+
