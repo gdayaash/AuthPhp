@@ -16,10 +16,15 @@ if(!isset($_SESSION['Name'])){
 
 <p><?php echo $_SESSION['Age'] ?></p>
 
-
 <p><?php echo $_SESSION['Email'] ?></p>
 
 
 <p><?php echo $_SESSION['Roll_No'] ?></p>
 
+<p><?php echo $_SESSION['user_status'] ?></p>
 
+
+
+<a href="logout.php">Logout</a>
+
+<a href="remove.php">Delete</a>

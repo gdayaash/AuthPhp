@@ -19,18 +19,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $result = $stmt->get_result();
             $ans = $result->fetch_assoc();
 
-            if($ans['Email'] == $userEmail && $ans['Password'] == $userPass ){
+            if($ans['Email'] == $userEmail && $ans['Password'] == $userPass && $ans['user_status']){
                 session_start();
                 $_SESSION['Name'] = $ans['Name'];
                 $_SESSION['Age'] = $ans['Age'];
                 $_SESSION['Email'] = $ans['Email'];
                 $_SESSION['Roll_No'] = $ans['Roll_No'];
                 $_SESSION['Password'] = $ans['Password'];
+                $_SESSION['user_status'] = $ans['user_status'];
                 header('Location: dashboard.php');
                 exit;
             }else{
                 // header('Location: login.php');
-                echo "Invalid Credentials";
+                echo "Invalid Credentials Or user MayBe Removed";
                 // header('Location: login.php');
             }
 
