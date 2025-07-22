@@ -10,7 +10,7 @@
     <h1>Sign in to Explore</h1>
     <!-- (Email, Password) -->
     <div class="form-wrapper">
-     <form action="auth.php" method="post">
+     <form action="authenticate.php" method="post">
 
         <div class="form-col">
             <label for="email">Email</label>
@@ -26,6 +26,9 @@
             <button type="submit">Sign In</button>
         </div>
 
+        <div class="form-col">
+            <span><?php echo $error; ?></span>
+        </div>
      </form>
     </div>
 </body>

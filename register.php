@@ -75,3 +75,7 @@ $conn->close();
 ?>
 
 
+    <h4>Now You Can login here</h4>
+    <a href="login.php">Login</a>
+
+
