@@ -2,7 +2,10 @@
 
 require "connect.php";
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if($_SERVER["REQUEST_METHOD"] !== "POST"){
+    header('Location: login.php');
+}else{
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
     
     $userEmail = trim($_POST['useremail'] ?? '');
     $userPass = trim($_POST['userpassword'] ?? '');
@@ -28,9 +31,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }else{
         echo "DB ERROR" .$stmt->error;
         header('Location: login.php');
+        
     }
 }
 $stmt->close();
 $conn->close();
+}
+
+
 ?>
 

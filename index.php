@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,7 +43,16 @@
             <button type="submit">Submit & Register</button>
         </div>
 
+        <div class="erro-col">
+            <span><?php echo $_SESSION['empty']; ?>
+            <?php echo $_SESSION['nameEr']; ?>
+            <?php echo $_SESSION['ageEr']; ?>
+            <?php echo $_SESSION['emailEr']; ?>
+            <?php echo $_SESSION['passEr']; ?></span>
+            <?php unset($_SESSION['empty'], $_SESSION['nameEr'], $_SESSION['ageEr'], $_SESSION['emailEr'], $_SESSION['passEr']); ?>
+        </div>
 
+        
 
      </form>
     </div>

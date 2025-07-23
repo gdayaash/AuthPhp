@@ -1,3 +1,11 @@
+<?php 
+session_start();
+if(isset($_SESSION['Name'])){
+    header('Location: dashboard.php');
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +18,7 @@
     <h1>Sign in to Explore</h1>
     <!-- (Email, Password) -->
     <div class="form-wrapper">
-     <form action="authenticate.php" method="post">
+     <form action="auth.php" method="post">
 
         <div class="form-col">
             <label for="email">Email</label>
@@ -27,8 +35,8 @@
         </div>
 
         <div class="form-col">
-            <span><?php echo $error; ?></span>
-        </div>
+            <span><?php echo $_SESSION['error']; ?></span>
+        </div> 
      </form>
     </div>
 </body>

@@ -1,23 +1,52 @@
 <?php
 session_start();
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    // for Blocking direct Access
+    // Block direct access
     header("Location: ./");
     exit();
 }
-
 require "connect.php";
 echo "<br>";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
-    
+    //Old Logic
 
     $name = trim($_POST['name'] ?? '');
     $age = trim($_POST['age'] ?? '');
     $email = trim($_POST['email']?? '');
     $roll_No = trim($_POST['roll'] ?? '');
     $pass = trim($_POST['password']?? '');
+
+    // if(empty($name)){
+    //     echo "This Field is required <br>";
+    // }else if(!preg_match("/^[a-zA-Z-' ]*$/",$name)){
+    //     echo "Only Letters Allowed <br>";
+    // }
+    
+    // if(empty($age)){
+    //     echo "This Field is required <br>";
+    // }else if($age <= 0 || $age > 120){
+    //     echo "Give Proper Age <br>";
+    // }
+    
+    // if(empty($email)){
+    //     echo "Email is Required <br>";
+    // }else if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+    //     echo "Give Valid Email <br>";
+    // }
+    
+    // if(empty($roll_No)){
+    //     echo "Roll No is Required <br>";
+    // }
+    
+    // if(empty($pass) || strlen($pass) < 8 ){
+    //     echo "No pass <br>";
+    // }else if(strlen($pass) < 8 ){
+    //     echo"wrong pass";
+    // }
+
+    //Old Logic
 
     //New Logic
     if
@@ -86,6 +115,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 <p><?php echo $roll_No; ?></p>
 <p><?php echo $pass;?></p>
 
+<?php
+
+//Sending the data to Database
+
+// $stmt = $conn-> prepare("INSERT INTO studentRegistration(Name, Age, Email, Roll_No, Password) VALUES (?,?,?,?,?)");
+// $stmt->bind_param('sisis', $name, $age, $email, $roll_No, $pass);
+
+//         if ($stmt->execute()) {
+//             echo "Registration successful.";
+//         } else {
+//             echo "DB Error: " . $stmt->error;
+//         }
+
+// $stmt->close();
+// $conn->close();
+
+?>
 
 
     <h4>Now You Can login here</h4>
